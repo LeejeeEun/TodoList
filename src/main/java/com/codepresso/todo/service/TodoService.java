@@ -1,8 +1,8 @@
 package com.codepresso.todo.service;
 
-
 import java.util.List;
 
+import com.codepresso.todo.mapper.TodoMapper;
 import com.codepresso.todo.vo.Todo;
 import org.springframework.stereotype.Service;
 
@@ -10,22 +10,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoService {
 
-    private final List<Todo> todoList;
+    private TodoMapper todoMapper;
 
-    public TodoService(List<Todo> todoList) {
-        this.todoList = todoList;
+    public TodoService(TodoMapper todoMapper) {
+        this.todoMapper = todoMapper;
     }
-
     public void addTodo(Todo todo) {
-        todo.setId(todoList.size());
-        todoList.add(todo);
+        todo.setIsCompleted("N");
+        todoMapper.save(todo);
     }
-
-    public List<Todo> getTodoList(){
-        return todoList;
-    }
-
-    public void deleteTodo(int index) {
-        todoList.remove(index);
+    public List<Todo> getTodoList() {return null;}
+    public void deleteTodo(int id){
     }
 }
