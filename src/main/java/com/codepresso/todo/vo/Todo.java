@@ -30,4 +30,9 @@ public class Todo {
 
     public String getIsCompleted() {
         return isCompleted;
-    }}
+    }
+
+    public void setIsCompleted(String isCompleted) {
+        this.isCompleted = isCompleted;
+    }
+}

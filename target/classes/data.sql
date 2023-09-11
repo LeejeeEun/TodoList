@@ -1,0 +1,2 @@
+INSERT INTO TODO(CONTENT, ISCOMPLETED) values ('Study Spring', 'N');
+INSERT INTO TODO(CONTENT, ISCOMPLETED) values ('Study MyBatis', 'N');

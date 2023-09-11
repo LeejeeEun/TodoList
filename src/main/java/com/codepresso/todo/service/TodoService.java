@@ -13,13 +13,16 @@ public class TodoService {
     private TodoMapper todoMapper;
 
     public TodoService(TodoMapper todoMapper) {
+
         this.todoMapper = todoMapper;
     }
     public void addTodo(Todo todo) {
         todo.setIsCompleted("N");
         todoMapper.save(todo);
     }
-    public List<Todo> getTodoList() {return null;}
+    public List<Todo> getTodoList() {
+        return todoMapper.findAll();
+    }
     public void deleteTodo(int id){
     }
 }
